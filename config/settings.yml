@@ -8,3 +8,8 @@ per_page:
 format:
   image: "%w(jpg jpeg gif png)"
 description: 20
+page_404_url: "public/404.html"
+size_image:
+  large: "750x300"
+  medium: "650x300"
+  small: "150x100"

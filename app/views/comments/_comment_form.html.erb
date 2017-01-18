@@ -1,0 +1,23 @@
+<%= form_tag comments_path, method: :post, remote: true do %>
+  <div class="col-md-12">
+    <div class="comment-from">
+      <% if current_user.nil? %>
+        <%= label_tag :name %>
+        <%= text_field_tag :name, nil, class: "form-control", id: "comment_name" %>
+      <% else %>
+        <%= hidden_field_tag :name, current_user.name %>
+      <% end %>
+      <%= label_tag :content %>
+      <%= text_area_tag :content, nil, rows: 3, cols: 30, id: "comment_content", 
+        class: "form-control"  %>
+      <%= hidden_field_tag :id, @project.id %> 
+    </div>
+  </div>
+  <div class="col-md-12">
+    <div class="col-md-2">
+      <%= submit_tag "comment", class: "btn btn-info" %>
+    </div>
+    <div class="col-md-10">
+    </div>
+  </div>
+<% end %>
