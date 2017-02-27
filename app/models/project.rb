@@ -13,7 +13,7 @@ class Project < ApplicationRecord
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  validate :check_max_files
+  #validate :check_max_files
   validates :name, presence: true,
    length: {maximum: Settings.project.name_length}
   validates :url, presence: true,

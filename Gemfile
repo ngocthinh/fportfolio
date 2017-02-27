@@ -6,8 +6,6 @@ gem "kaminari"
 gem "bootstrap-kaminari-views"
 gem "bootstrap-sass", "3.3.6"
 gem "font-awesome-rails"
-gem "animate-rails"
-gem "puma", "~> 3.0"
 gem "sass-rails", "~> 5.0"
 gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.2"
@@ -40,11 +38,15 @@ gem "puma", "~> 3.0"
 gem "pygments.rb", "~> 0.6.3"
 gem "redcarpet", "~> 3.3", ">= 3.3.4"
 gem "simplemde-rails"
+gem "faker"
 
 group :development, :test do
   gem "pry-rails"
   gem "byebug", platform: :mri
   gem "mysql2", ">= 0.3.18", "< 0.5"
+  gem "factory_girl_rails"
+  gem "rspec-rails", "~> 3.5"
+  gem "capybara"
 end
 
 group :development do
@@ -56,6 +58,14 @@ end
 
 group :production do
   gem "pg", "0.18.4"
+end
+
+group :test do
+  gem "database_cleaner"
+  gem "rails-controller-testing"
+  gem "shoulda-matchers", github: "thoughtbot/shoulda-matchers"
+  gem "simplecov", require: false
+  gem "rspec-activemodel-mocks"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

@@ -3,12 +3,13 @@ class LikesController < ApplicationController
   before_action :load_project, only: [:create, :destroy]
 
   def create
+
     @like = @project.likes.build user_id: current_user.id
     if @like.save
       respond_to do |format|
         format.js
       end
-    end 
+    end
   end
 
   def destroy
@@ -23,7 +24,7 @@ class LikesController < ApplicationController
   private
 
   def load_project
-    @project = Project.find_by id: params[:id]
+    @project = Project.find_by id: params[:project_id]
     render file: Settings.page_404_url unless @project
   end
 end

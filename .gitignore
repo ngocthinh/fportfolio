@@ -43,3 +43,4 @@ bower.json
 /config/database.yml
 /etq
 /config/application.yml
+coverage
